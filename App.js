@@ -50,20 +50,22 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {/* Retângulo Colorido */}
+
       <View style={styles.topRectangle}>
         {/* Imagem no topo */}
         <Image
           source={{ uri: '' }} // Substitua com a URL da sua imagem
           style={styles.logo}
         />
+        <Text style={styles.title}>Login</Text>
       </View>
 
       <View style={styles.loginContainer}>
-        <Text style={styles.title}>Login</Text>
+
 
         <TextInput
           style={styles.input}
-          placeholder="Email"
+          placeholder="Usuário"
           value={email}
           onChangeText={(text) => setEmail(text)}
           keyboardType="email-address"
@@ -95,40 +97,56 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f8f8f8',
+
   },
   topRectangle: {
     width: '100%',
-    height: 150,
-    backgroundColor: '#4A90E2', // Cor de fundo do retângulo
+    height: 300,
+    backgroundColor: '#FFCB67',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 20,
   },
   logo: {
     width: 100,
     height: 100,
-    resizeMode: 'contain', // Ajuste a imagem para caber dentro do espaço
+    resizeMode: 'contain',
   },
   loginContainer: {
-    flex: 1,
+    width: '100%', // Ajuste a largura para 90% da tela
+    height: '100%',
     justifyContent: 'center',
     padding: 20,
+    borderRadius: 40,
+    borderColor: '#FFFF',
+    borderWidth: 20, // Largura da borda aumentada
+    backgroundColor: '#fff',
+    marginTop: -40, // Move o contêiner de login para cima
+    alignSelf: 'center', // Centraliza o contêiner
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 20,
-    textAlign: 'center',
+    marginRight: 250,
+
   },
   input: {
-    height: 50,
-    borderColor: '#ccc',
+    height: 65,
+    width: 350,
+    backgroundColor: '#E9E9E9',
+    borderColor: '#fff',
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 45,
     marginBottom: 10,
     paddingHorizontal: 10,
+    top: -200,
+
+  },
+  handleLogin:{
+color: '#FFCB67',
   },
   error: {
+
     color: 'red',
     marginBottom: 10,
     textAlign: 'center',
@@ -140,5 +158,8 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
+
+
+
 
 export default LoginScreen;
