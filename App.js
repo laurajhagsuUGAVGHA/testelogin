@@ -64,7 +64,7 @@ const LoginScreen = ({ navigation }) => {
 
 
         <TextInput
-          style={styles.input}
+          style={styles.input1}
           placeholder="Usuário"
           value={email}
           onChangeText={(text) => setEmail(text)}
@@ -82,7 +82,7 @@ const LoginScreen = ({ navigation }) => {
 
         {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
 
-        <Button title="Entrar" onPress={handleLogin} />
+        <Button title="Entrar" onPress={handleLogin} style={styles.botao} />
 
         {/* Botão Esqueci Minha Senha */}
         <TouchableOpacity onPress={handleForgotPassword}>
@@ -140,23 +140,46 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 10,
     top: -200,
+    shadowColor: '#000', // Cor da sombra
+    shadowOffset: { width: 0, height: 2 }, // Posição da sombra
+    shadowOpacity: 0.30, // Opacidade da sombra
+    shadowRadius: 3.84, // Raio da sombra (iOS)
+    elevation: 10, // Sombra no Android (substitui algumas propriedades de sombra)
 
   },
-  handleLogin:{
-color: '#FFCB67',
+  input1: {
+    height: 65,
+    width: 350,
+    backgroundColor: '#E9E9E9',
+    borderColor: '#fff',
+    borderWidth: 1,
+    borderRadius: 45,
+    marginBottom: 10,
+    paddingHorizontal: 10,
+    top: -220,
+    shadowColor: '#000', // Cor da sombra
+    shadowOffset: { width: 0, height: 2 }, // Posição da sombra
+    shadowOpacity: 0.30, // Opacidade da sombra
+    shadowRadius: 3.84, // Raio da sombra (iOS)
+    elevation: 10, // Sombra no Android (substitui algumas propriedades de sombra)
+
+  },
+  botao: {
+    backgroundColor: '#FFCB67',
+    border
   },
   error: {
-
-    color: 'red',
+    color: 'black',
     marginBottom: 10,
     textAlign: 'center',
   },
   forgotPassword: {
-    color: 'blue',
+    color: 'black',
     marginTop: 10,
     textAlign: 'center',
     textDecorationLine: 'underline',
   },
+
 });
 
 
